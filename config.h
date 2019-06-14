@@ -391,10 +391,10 @@
 #endif
 
 // defines for USB (DONT CHANGE)
-#define VEND_ID0 0xAF
-#define VEND_ID1 0x1E
-#define PROD_ID0 0x03
-#define PROD_ID1 0x00
+#define VEND_ID0 0x09
+#define VEND_ID1 0x12
+#define PROD_ID0 0x00
+#define PROD_ID1 0x92
 
 // Value to place in RTC backup register 10 for persistent bootloader mode
 #define RTC_BOOTLOADER_FLAG 0x424C
