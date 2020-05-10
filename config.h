@@ -124,9 +124,9 @@
     #define BUTTON_PIN           8
     #define BUTTON_PRESSED_STATE 1
 
-    /* USB Disc Pin Setup.   USB DISC is PB9 */
-    #define USB_DISC_BANK         GPIOB
-    #define USB_DISC_PIN              9
+    /* USB Disc Pin Setup.   USB DISC is PC12 */
+    #define USB_DISC_BANK         GPIOC
+    #define USB_DISC_PIN             12
 
 #elif defined TARGET_MAPLE_REV5
 
@@ -140,10 +140,11 @@
     /* On the Mini, BUT is PB8 */
     #define BUTTON_BANK      GPIOC
     #define BUTTON_PIN           9
+    #define BUTTON_PRESSED_STATE 1
 
-    /* USB Disc Pin Setup.   USB DISC is PB9 */
-    #define USB_DISC_BANK         GPIOB
-    #define USB_DISC_PIN              9
+    /* USB Disc Pin Setup.   USB DISC is PC12 */
+    #define USB_DISC_BANK         GPIOC
+    #define USB_DISC_PIN             12
 
 #elif defined TARGET_GENERIC_F103_PC13
 
@@ -158,6 +159,24 @@
     #define BUTTON_BANK GPIOB
     #define BUTTON_PIN 2
     #define BUTTON_PRESSED_STATE 1
+	
+#elif defined TARGET_GENERIC_F103_PC13_FASTBOOT
+
+
+    #define LED_BANK            GPIOC
+    #define LED_PIN             13
+    #define LED_ON_STATE        0
+
+// Use Boot1 PB2 as the button, as hardly anyone uses this pin as GPIO
+// Need to set the button input mode to just CR_INPUT and not CR_INPUT_PU_PD because the external pullup on the jumplink is very weak
+	#define BUTTON_INPUT_MODE 	CR_INPUT
+    #define BUTTON_BANK GPIOB
+    #define BUTTON_PIN 2
+    #define BUTTON_PRESSED_STATE 1
+
+	#define FASTBOOT 1
+
+#elif defined TARGET_GENERIC_F103_NONE
 
 
 #elif defined TARGET_GENERIC_F103_PG15
@@ -368,6 +387,24 @@
 
     /* CRISTAL 12MHz */
     #define XTAL12M     1
+
+#elif defined TARGET_STM32_SMART_V20
+
+    #define LED_BANK            GPIOC
+    #define LED_PIN             13
+    #define LED_ON_STATE        1
+
+    #define BUTTON_BANK GPIOA
+    #define BUTTON_PIN 0
+    #define BUTTON_PRESSED_STATE 1
+
+    /* CRISTAL 8MHz */
+
+#elif defined TARGET_CC3D
+
+    #define LED_BANK            GPIOB
+    #define LED_PIN             3
+    #define LED_ON_STATE        0
 
 
 #else

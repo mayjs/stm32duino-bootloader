@@ -1,6 +1,7 @@
 make maple-mini
 make maple-rev3
 make maple-rev5
+make generic-none
 make generic-pc13
 make generic-pg15
 make generic-pd2
@@ -21,3 +22,6 @@ make hytiny-stm32f103t
 make dso138
 make gd32f1-generic-pc13
 make gd32f1-frankenmaple
+make cc3d
+make generic-pc13-fastboot
+make smart-v2
