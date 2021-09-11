@@ -1,3 +1,5 @@
+// Use Boot1 PB2 as the button, as hardly anyone uses this pin as GPIO
+// Need to set the button input mode to just CR_INPUT and not CR_INPUT_PU_PD because the external pullup on the jumplink is very weak
 /******************************************************************************
  * The MIT License
  *
@@ -216,12 +218,28 @@
 
     #define LED_BANK            GPIOA
     #define LED_PIN             1
-    #define LED_ON_STATE        1
+    #define LED_ON_STATE        0
 
-    // Button (if you have one)
-    #define BUTTON_BANK GPIOC
-    #define BUTTON_PIN 14
+// Use Boot1 PB2 as the button, as hardly anyone uses this pin as GPIO
+// Need to set the button input mode to just CR_INPUT and not CR_INPUT_PU_PD because the external pullup on the jumplink is very weak
+    #define BUTTON_BANK GPIOB
+    #define BUTTON_PIN 2
     #define BUTTON_PRESSED_STATE 1
+
+#elif defined TARGET_GENERIC_F103_PA1_FASTBOOT
+
+    #define LED_BANK            GPIOA
+    #define LED_PIN             1
+    #define LED_ON_STATE        0
+
+    #define FASTBOOT 1
+// Use Boot1 PB2 as the button, as hardly anyone uses this pin as GPIO
+// Need to set the button input mode to just CR_INPUT and not CR_INPUT_PU_PD because the external pullup on the jumplink is very weak
+	#define BUTTON_INPUT_MODE 	CR_INPUT
+    #define BUTTON_BANK GPIOB
+    #define BUTTON_PIN 2
+    #define BUTTON_PRESSED_STATE 1
+
 
 #elif defined TARGET_GENERIC_F103_PA1_BUTTON_PA8
 
@@ -229,6 +247,7 @@
     #define LED_PIN             1
     #define LED_ON_STATE        1
 
+	#define BUTTON_INPUT_MODE 	CR_INPUT
     #define BUTTON_BANK GPIOA
     #define BUTTON_PIN 8
     #define BUTTON_PRESSED_STATE 0

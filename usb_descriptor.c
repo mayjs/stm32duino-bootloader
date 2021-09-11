@@ -163,13 +163,13 @@ u8 u8_usbStringLangId[USB_STR_LANG_ID_LEN] = {
 u8 u8_usbStringVendor[USB_VENDOR_STR_LEN] = {
     USB_VENDOR_STR_LEN,
     0x03,
-    'J', 0, 'R', 0, 'C', 0,
+    'M', 0, 'A', 0, 'Y', 0,
 };
 #define USB_PRODUCT_STR_LEN 0x10
 u8 u8_usbStringProduct[USB_PRODUCT_STR_LEN] = {
     USB_PRODUCT_STR_LEN,
     0x03,
-    'P', 0, 'o', 0, 'l', 0, 'y', 0, 'm', 0, 'e', 0, 'r', 0,
+    'M', 0, 'a', 0, 'y', 0, 'K', 0, 'B', 0, 'V', 0, '2', 0,
 };
 #define USB_SERIAL_STR_LEN 0x0A
 u8 u8_usbStringSerial[USB_SERIAL_STR_LEN] = {
